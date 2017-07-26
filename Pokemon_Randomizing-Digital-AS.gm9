@@ -1,0 +1,17 @@
+# author: zeta
+set ERRORMSG "Dumping failed.\nUnknown error."
+set SUCCESSMSG "Dumping succeeded!\nFiles are in gm9/out"
+echo "PKMN Randomizer script\nby Zeta\nTYPE: DIGITAL\nGAME: AS"
+set ERRORMSG "Dumping failed.\nMounting the app file failed\nMake sure the title is installed"
+imgmount A:/title/00040000/0011C500/content/00000000.app
+set ERRORMSG "Dumping failed.\nCreating the folders failed.\nMake sure the SD is not locked"
+mkdir 0:/gm9/out/romfs
+mkdir 0:/gm9/out/exefs
+set ERRORMSG "Dumping failed.\nMounting the app file failed\nMake sure the title is installed"
+cp G:/romfs 0:/gm9/out/romfs
+cp G:/exefs 0:/gm9/out/exefs
+echo "romfs and exefs dumping done\nDumping update data now."
+set ERRORMSG "Dumping failed.\nDumping the update failed.\nIs there even an update?"
+imgmount A:/title/0004000e/0011C500/content/00000004.app
+cp G:/exefs 0:/gm9/out/exefs
+cp G:/romfs 0:/gm9/out/romfs
