@@ -1,16 +1,18 @@
-# author: Slade
-set ERRORMSG "Dumping failed.\nUnknown error."
+# author: zeta
+set ERRORMSG "Dumping failed."
 set SUCCESSMSG "Dumping succeeded!\nFiles are in gm9/out"
-echo "PKMN Randomizer script\nby Slade\nTYPE: DIGITAL\nGAME: MOON"
-set ERRORMSG "Dumping failed.\nMounting the app file failed\nMake sure the title is installed"
-imgmount A:/title/00040000/00175E00/content/00000000.app
-set ERRORMSG "Dumping failed.\nCreating the folders failed.\nMake sure the SD is not locked"
+echo "PKMN Randomizer script\nby Zeta\nTYPE: DIGITAL\nGAME: MOON"
+ask "Is this corrrect?"
+set ERRORMSG "Dumping failed.\nMounting the 3ds file failed."
+filesel "Please select the correct .app file" A:/title/00040000/00175E00/content/*.app GAME
+imgmount $[GAME]
 mkdir 0:/gm9/out/romfs
 mkdir 0:/gm9/out/exefs
-set ERRORMSG "Dumping failed.\nMounting the app file failed\nMake sure the title is installed"
-cp G:/romfs 0:/gm9/out/romfs
+set ERRORMSG "Dumping failed.\nCopying romfs/exefs failed."
+cp G:/content0.game/romfs/ 0:/gm9/out/romfs
+cp G:/content0.game/exefs/ 0:/gm9/out/exefs
+echo "RomFS and ExeFS dumping done\nDumping the update now."
+set ERRORMSG "Dumping failed.\nDumping the update failed."
+find A:/title/0004000e/00164800/content/0000000?.app UPDATE
+imgmount $[UPDATE]
 cp G:/exefs 0:/gm9/out/exefs
-echo "romfs and exefs dumping done\nDumping code.bin now."
-set ERRORMSG "Dumping failed.\nDumping the update failed.\nIs there even an update?"
-imgmount A:/title/0004000e/00175E00/content/00000002.app
-cp G:/exefs/.code 0:/gm9/out/exefs/.code

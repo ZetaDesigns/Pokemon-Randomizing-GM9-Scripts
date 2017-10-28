@@ -1,10 +1,10 @@
 # author: zeta
 set ERRORMSG "Dumping failed."
 set SUCCESSMSG "Dumping succeeded!\nFiles are in gm9/out"
-echo "PKMN Randomizer script\nby Zeta\nTYPE: DIGITAL\nGAME: Y"
+echo "PKMN Randomizer script\nby Zeta\nTYPE: DIGITAL\nGAME: OMEGA RUBY"
 ask "Is this corrrect?"
 set ERRORMSG "Dumping failed.\nMounting the 3ds file failed."
-filesel "Please select the correct .app file" A:/title/00040000/00055E00/content/*.app GAME
+filesel "Please select the correct .app file" A:/title/00040000/0011C400/content/*.app GAME
 imgmount $[GAME]
 mkdir 0:/gm9/out/romfs
 mkdir 0:/gm9/out/exefs
@@ -13,7 +13,7 @@ cp G:/content0.game/romfs/ 0:/gm9/out/romfs
 cp G:/content0.game/exefs/ 0:/gm9/out/exefs
 echo "RomFS and ExeFS dumping done\nDumping the update now."
 set ERRORMSG "Dumping failed.\nDumping the update failed."
-find A:/title/0004000e/00055E00/content/0000000?.app UPDATE
+find A:/title/0004000e/0011C400/content/0000000?.app UPDATE
 imgmount $[UPDATE]
 cp G:/exefs 0:/gm9/out/exefs
 cp G:/romfs 0:/gm9/out/romfs
