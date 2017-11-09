@@ -9,8 +9,8 @@ imgmount $[GAME]
 mkdir 0:/gm9/out/romfs
 mkdir 0:/gm9/out/exefs
 set ERRORMSG "Dumping failed.\nCopying romfs/exefs failed."
-cp G:/content0.game/romfs/ 0:/gm9/out/romfs
-cp G:/content0.game/exefs/ 0:/gm9/out/exefs
+cp G:/romfs/ 0:/gm9/out/romfs
+cp G:/exefs/ 0:/gm9/out/exefs
 echo "RomFS and ExeFS dumping done\nDumping the update now."
 set ERRORMSG "Dumping failed.\nDumping the update failed."
 find A:/title/0004000e/00055E00/content/0000000?.app UPDATE
