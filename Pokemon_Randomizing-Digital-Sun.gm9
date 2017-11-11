@@ -16,3 +16,4 @@ set ERRORMSG "Dumping failed.\nDumping the update failed."
 find A:/title/0004000e/00164800/content/0000000?.app UPDATE
 imgmount $[UPDATE]
 cp G:/exefs 0:/gm9/out/exefs
+cp G:/romfs 0:/gm9/out/romfs
