@@ -1,4 +1,4 @@
-b# author: zeta
+# author: zeta
 set ERRORMSG "Dumping failed.\nUnknown error."
 set SUCCESSMSG "Dumping succeeded!\nFiles are in gm9/out"
 echo "PKMN Randomizer script\nby Zeta\nTYPE: GAMECART\nGAME: ULTRASUN"
